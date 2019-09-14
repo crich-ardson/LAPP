@@ -1,0 +1,74 @@
+.navbar{
+    background-color: #621f91 !important; 
+}
+.h3-header{
+    padding-top: 30px !important;
+    padding-bottom: 0px;
+    color: #621f91;
+    font-family: Georgia, serif;
+    font-size: 40px;
+    text-align: center;
+}
+.h3-header-alt{
+    padding-top: 30px !important;
+    padding-bottom: 0px;
+    color: whitesmoke;
+    font-family: Georgia, serif;
+    font-size: 40px;
+    text-align: center;                
+}
+hr{
+    width: 90%;
+}
+.col{
+    
+    align-content: center !important;
+}
+.button{
+    margin-left: 90px !important;
+    padding: 86px 86px;
+    border-radius: 8px;
+    background-color: darkorchid;
+    border: 0px !important;
+}
+.button:hover{
+    background-color: #611f8f !important;
+}
+.button:active{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19) !important;
+}
+.button:focus{
+    outline: 0;
+}
+#row_1{
+    padding-bottom: 0px;
+}
+#row_2{
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+#row_3{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#about_section{
+    background-color: darkorchid;
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 10%;
+}
+#hr_alt{
+    width: 90%;
+    background-color: whitesmoke !important;
+}
+p{
+    font-family: Georgia, serif;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: whitesmoke;
+}
+.footer-copyright{
+    font-family: Georgia, serif;
+    color: whitesmoke;
+    background-color: #621f91 !important;
+} 

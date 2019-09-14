@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        
+        <title>Olivia's App</title>
+                   
+    </head>
+    <!---->
+    <body>
+        <!--Begin navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Liv's App</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Navigation Buttons for navbar-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about_section">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#liv_sounds">Sounds</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--navbar end-->
+
+        <div id="liv_sounds" class="h3-header">Messages for Liv</div>
+
+        <hr />
+
+        <!--Begin Columns for soundboard buttons-->
+        <div class="container">
+            <div id="row_1" class="row">
+                <div class="col">
+                    <button class="button" id="test1" type="button" onclick="playSound('liv_sound_001')"></button>
+                </div>
+                <div class="col">
+                    <button class="button" id="test2" type="button" onclick="playSound('liv_sound_002')"></button>
+                </div>
+                <div class="col">
+                    <button class="button" type="button" onclick="playSound('liv_sound_003')"></button>
+                </div>
+            </div>
+
+            <div id="row_2" class="row">
+                <div class="col">
+                    <button class="button" type="button" onclick="playSound('liv_sound_004')"></button>
+                </div>
+                <div class="col">
+                    <button class="button" type="button" onclick="playSound('liv_sound_005')"></button>
+                </div>
+                <div class="col">
+                    <button class="button" type="button" onclick="playSound('liv_sound_006')"></button>
+                </div>
+            </div>
+
+            <div id="row_3" class="row">
+                    <div class="col">
+                        <button class="button" type="button" onclick="playSound('liv_sound_007')"></button>
+                    </div>
+                    <div class="col">
+                        <button class="button" type="button" onclick="playSound('liv_song_001')"></button>
+                    </div>
+                    <div class="col">
+                        <button class="button" type="button" onclick="playSound('liv_song_002')"></button>
+                    </div>
+                </div>
+        </div>
+        <!--End soundboard buttons-->
+
+        <div id="about_section" class="container">
+            <div class="h3-header-alt">About</div>
+
+            <hr id="hr_alt" />
+
+            <p>Hi there, my name's Cameron. If you're not my  girlfriend, feel free to click around. However, know that this content is in no way, shape, or form meant for you.</p>
+            <br />
+            <p>
+                I originally planned for this project to be a music player, as it would hold all the songs I've sung in one easy place. Instead,
+                it's become a little experiment with some HTML, CSS, and Javascript to make a soundboard that puts out my voice at the click of a button.
+                When you've got time and I'm not immediately nearby, my voice is right here to keep you company.
+            </p>
+
+        </div>
+
+        <div class="footer-copyright text-center py-3">
+            Project by Cameron Richardson
+        </div>
+        <script LANGUAGE="Javascript">      
+                function playSound(fileId){
+                    //build file path for audio element
+                    var path = 'Sounds/';
+                    var file = path.concat(fileId,'.m4a');
+
+                    //begin creating audio element to play sound
+                    var audio = document.createElement('audio');
+                    audio.className = 'audiop';
+                    audio.src = file;
+                    audio.style.display = "none";
+                    audio.autoplay = false;
+                    audio.onended = function(){
+                        audio.remove();
+                    };
+                    audio.play();
+                    manageSound(1);
+                }
+
+                function manageSound(count){
+                    var state = state + count;
+                    if (state > 0){
+                        //stop any current sounds
+                        var sounds = document.getElementsByClassName('audiop');
+                        var sound = sounds[0];
+                        sound.src = "";
+                        sound.pause();
+                        //var len = sounds.length;
+                        //var i = 0;
+                        //for(i; i < len;i++){
+                        //sounds[i].src="";
+                        //}
+                    }
+                }
+        </script>
+    </body>
+</html>
